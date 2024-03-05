@@ -13,6 +13,7 @@ import { PagoComponent } from './components/pago/pago.component';
 import { NgxPayPalModule } from 'ngx-paypal';
 import { DatosService } from 'src/app/services/datos';
 import { ReservasComponent } from './components/reservas/reservas.component';
+import { ModificacionReservasComponent } from './components/modificacion-reservas/modificacion-reservas.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ReservasComponent } from './components/reservas/reservas.component';
     PruebaComponent,
     FormularioComponent,
     PagoComponent,
-    ReservasComponent
+    ReservasComponent,
+    ModificacionReservasComponent
   ],
   imports: [
     BrowserModule,

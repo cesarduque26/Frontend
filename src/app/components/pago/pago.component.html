@@ -29,7 +29,7 @@
             </div>
     
             <div class="reserva-precios">
-                <h4>Desayuno: $7.00</h4>
+                <h4>Desayuno: {{ reserva.desayuno ? 7 * reserva.n_noches : 0 }}</h4>
                 <h4>Precio por {{ reserva.n_noches }} noches: ${{ calcularprecio_noches(reserva.n_noches,reserva.preciopornoche)}}</h4>
                 <h4>Subtotal: ${{ reserva.precioTotal }}</h4>
             </div>

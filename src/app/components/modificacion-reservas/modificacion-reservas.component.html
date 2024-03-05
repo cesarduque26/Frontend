@@ -1,0 +1,71 @@
+<!-- <div *ngFor="let reserva of reservas" class="reserva-detalle">
+  <p>Tipo Alojamiento: {{ obtenerDatosHabitaciones(reserva)?.TipoAlojamiento }}</p>
+  <p>Fecha de Check-In:
+    <input type="date" [(ngModel)]="reserva.FechaCheckIn" (change)="recalcularPrecio(reserva)"
+           [min]="reserva.FechaCheckIn" [max]="reserva.FechaCheckOut" />
+  </p>
+  <p>Fecha de Check-Out:
+    <input type="date" [(ngModel)]="reserva.FechaCheckOut" (change)="recalcularPrecio(reserva)"
+           [min]="reserva.FechaCheckIn" [max]="reserva.FechaCheckOut" />
+  </p><p>Número de Noches: {{ calcularNumeroNoches(reserva) }}</p>
+  <p>Precio por Noche: {{ obtenerDatosHabitaciones(reserva)?.Precio }}</p>  
+  <P>Desayuno incluido: {{ reserva.Desayuno ? 'Sí' : 'No' }}</P>
+  <p>Valor del desayuno: {{ reserva.Desayuno ? 7 : 0 }}</p>
+  <p>Valor total del desayuno: {{ reserva.Desayuno ? 7 * calcularNumeroNoches(reserva) : 0 }}</p>
+  <p>Estado de Reservación: {{ reserva.EstadoReservacion }}</p>
+  <p>Estado de Pago: {{ reserva.EstadoPago }}</p>
+  <p>Fecha de Reservación: {{ reserva.FechaReservacion }}</p>
+  <p>Precio Total: {{ reserva.PrecioTotal }}</p>
+</div>
+<div id="precio">
+  <h3>Subtotal de la reserva: {{subtotal}}</h3>
+  <h3>12% del iva: {{iva}}</h3>
+  <h3>Total de la reserva: {{precio}}</h3>
+</div>
+<button (click)="modificarReservas()">Modificar datos Reservas</button> -->
+
+<div class="contenedor">
+  <div id="tituloYLogo">
+      <img src="https://cdn-icons-png.flaticon.com/512/12066/12066533.png" alt="">
+      <h1 id="tituloReservacion">Reservación</h1>
+  </div>
+  <div class="politicas">
+      <img src="https://png.pngtree.com/png-clipart/20230418/original/pngtree-privacy-policy-line-icon-png-image_9065169.png" alt="Icono de Políticas">
+      <p>Políticas de la Empresa:</p>
+      <ul>
+          <li>Por políticas del hotel, solo se podrán modificar las fechas de reserva dentro del período inicialmente reservado.</li>
+      </ul>
+  </div>
+  <div *ngFor="let reserva of reservas" class="reserva-detalle">
+    <div class="seccion">
+      <h2>Detalles</h2>
+      <p><strong>Tipo de Alojamiento:</strong> {{ obtenerDatosHabitaciones(reserva)?.TipoAlojamiento }}</p>
+      <p>Fecha de Check-In:
+        <input type="date" [(ngModel)]="reserva.FechaCheckIn" (change)="recalcularPrecio(reserva)"
+               [min]="reserva.FechaCheckIn" [max]="reserva.FechaCheckOut" />
+      </p>
+      <p>Fecha de Check-Out:
+        <input type="date" [(ngModel)]="reserva.FechaCheckOut" (change)="recalcularPrecio(reserva)"
+               [min]="reserva.FechaCheckIn" [max]="reserva.FechaCheckOut" /><p><strong>Número de Noches:</strong> {{ calcularNumeroNoches(reserva) }}</p>
+      <p><strong>Precio por Noche:</strong> {{ obtenerDatosHabitaciones(reserva)?.Precio }}</p>  
+      <P>Desayuno incluido: {{ reserva.Desayuno ? 'Sí' : 'No' }}</P>
+      <p>Valor del desayuno: {{ reserva.Desayuno ? 7 : 0 }}</p>
+      <p>Valor total del desayuno: {{ reserva.Desayuno ? 7 * calcularNumeroNoches(reserva) : 0 }}</p>
+    </div>
+    <div class="seccion">
+      <h2>Estado</h2>
+      <p><strong>Estado de Reservación:</strong> {{ reserva.EstadoReservacion }}</p>
+      <p><strong>Estado de Pago:</strong> {{ reserva.EstadoPago }}</p>
+      <p><strong>Fecha de Reservación:</strong> {{ reserva.FechaReservacion }}</p>
+      <p><strong>Precio Total:</strong> {{ reserva.PrecioTotal }}</p>
+    </div>
+  </div>
+  <hr>
+  <div id="precio">
+      <p><strong>Subtotal de la reserva:</strong> {{subtotal}}</p>
+      <p><strong>12% del iva:</strong> {{iva}}</p>
+      <p><strong>Total de la reserva:</strong> {{precio}}</p>
+  </div>
+
+  <button (click)="modificarReservas()">Modificar datos Reservas</button>
+</div>

@@ -36,7 +36,7 @@ export class PagoComponent implements OnInit {
     this.url = Global.url;
     this.iva=0;
     this.subtotal=0;
-    this.clienteIdReserva=new ClienteIdReserva(this.nuevoCliente,"",true);
+    this.clienteIdReserva=new ClienteIdReserva(this.nuevoCliente,"",true,false,0);
   }
 
   ngOnInit() {
@@ -123,7 +123,7 @@ private initConfig(): void {
       reserva.EstadoReservacion='Registrado';
       reserva.EstadoPago='Completado';
       reserva.IdReservacion=this.nuevoCliente._id+'reserva'
-      this.clienteIdReserva=new ClienteIdReserva(this.nuevoCliente,reserva.IdReservacion,true);
+      this.clienteIdReserva=new ClienteIdReserva(this.nuevoCliente,reserva.IdReservacion,true,false,0);
       this._hotelService.saveReservacion(reserva).subscribe(
         response => {
           console.log("se guardo en la base de datos");
@@ -157,7 +157,6 @@ private initConfig(): void {
         console.log(this.mensaje);
       }
     );
- 
 }
 
 calcularprecio_noches(n1:number,n2:number): number {

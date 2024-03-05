@@ -6,6 +6,7 @@ import { PruebaComponent } from './components/prueba/prueba.component';
 import { FormularioComponent } from './components/formulario/formulario.component';
 import { PagoComponent } from './components/pago/pago.component';
 import { ReservasComponent } from './components/reservas/reservas.component';
+import { ModificacionReservasComponent } from './components/modificacion-reservas/modificacion-reservas.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/inicio', pathMatch: 'full' },
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path:'prueba',component:PruebaComponent},
   {path:'formulario', component:FormularioComponent},
   {path:'pago', component:PagoComponent},
-  {path:'buscar',component:ReservasComponent}
+  {path:'buscar',component:ReservasComponent},
+  {path:'modificacionReservas',component:ModificacionReservasComponent}
 ];
 
 @NgModule({

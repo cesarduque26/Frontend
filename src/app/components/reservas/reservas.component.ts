@@ -5,7 +5,9 @@ import { Habitacion } from 'src/app/models/habitacion';
 import { Reservacion } from "src/app/models/reservacion";
 import { Global } from 'src/app/services/global';
 import { HotelService } from 'src/app/services/hotel.service';
-
+import { DatosModificacionReservaService } from 'src/app/services/datosModificacionReserva'; // Importamos el servicio
+import { Router } from '@angular/router'; // Importa el servicio Router
+import { DatosService } from 'src/app/services/datos';
 @Component({
   selector: 'app-reservas',
   templateUrl: './reservas.component.html',
@@ -24,7 +26,7 @@ export class ReservasComponent implements OnInit {
   public subtotal:number;
   public precio ;
   public iva:number;
-  constructor(private _hotelService: HotelService) {
+  constructor(private router: Router,private _hotelService: HotelService,private datosService: DatosService, private datosModificacionReservaService: DatosModificacionReservaService) {
     this.Reservaciones = [];
     this.Habitaciones = [];
     this.Cliente=new Cliente('','','','','','','');
@@ -40,6 +42,8 @@ export class ReservasComponent implements OnInit {
     this.obtenerReservaciones();
     this.obtenerHabitaciones();
   }
+
+ 
   obtenerReservaciones() {
     this._hotelService.getReservaciones().subscribe(
       response => {
@@ -195,8 +199,18 @@ export class ReservasComponent implements OnInit {
       alert("No puede eliminar la reserva porque han pasado mas 48 horas desde que realizo la reserva.");
     }
   }
+
+  //modificar reserva
   modificarReserva(){
-    
+    this.obtenerDatosModificados()
+    this.datosService.actualizarNuevoCliente(this.Cliente);
+
+    this.router.navigate(['/modificacionReservas']) ;
   }
+
+  obtenerDatosModificados() {
+    this.datosModificacionReservaService.enviarDatosActualizar(this.reservasEncontradas);
+  }
+  //fin modificar reserva
 }
 

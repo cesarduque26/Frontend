@@ -26,7 +26,7 @@ export class FormularioComponent implements OnInit{
     constructor(private _hotelService: HotelService,private datosService: DatosService,private router: Router) {
       this.url = Global.url;
       this.nuevoCliente=new Cliente('','','','','','','');
-      this.clienteIdReserva=new ClienteIdReserva(this.nuevoCliente,"",false);
+      this.clienteIdReserva=new ClienteIdReserva(this.nuevoCliente,"",false,false,0);
     }
 
     ngOnInit(): void {

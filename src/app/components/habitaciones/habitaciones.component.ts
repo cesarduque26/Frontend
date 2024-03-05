@@ -306,8 +306,9 @@ anadir(habitacion: Habitacion,index: number) {
     tipoAlojamiento: habitacion.TipoAlojamiento
   };
   if (reservaCarrito.desayuno) {
-    reservaCarrito.precioTotal+=7;
-    nuevaReservacion.PrecioTotal+=7;
+    let desayunoPorDias = 7 * diffDays;
+    reservaCarrito.precioTotal+=desayunoPorDias;
+    nuevaReservacion.PrecioTotal+=desayunoPorDias;
   }
   this.NuevaReservacion.push(nuevaReservacion);
 

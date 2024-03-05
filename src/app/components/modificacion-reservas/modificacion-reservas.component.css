@@ -1,0 +1,123 @@
+/* .reserva-detalle {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.reserva-detalle p {
+  margin: 5px 0;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+} */
+.contenedor {
+  background-color: #f5faff;
+  max-width: 800px; 
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+#tituloYLogo {
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+}
+
+#tituloReservacion {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 10px;
+  margin-left: 10px; 
+  color: #3396ff;
+}
+
+#tituloYLogo img {
+  width: 70px;
+}
+
+.politicas {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  color: #120a42;
+}
+
+.politicas img {
+  width: 30px;
+  margin-right: 5px;
+}
+
+.politicas ul {
+  text-align: justify;
+  color: #666;
+}
+
+.reserva-detalle {
+  display: flex;
+  justify-content: space-between;
+}
+
+.seccion {
+  width: 48%;
+}
+
+.seccion h2 {
+  margin-bottom: 10px;
+  color: #11648a;
+}
+
+.seccion p {
+  margin: 5px 0;
+}
+
+.reserva-detalle input[type="date"] {
+  width: 150px;
+}
+
+button {
+  background-color: #4b87c7;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  display: block;
+  margin: 20px auto; 
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#precio {
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+#precio p {
+  margin: 5px 0;
+}
+
+.mensaje-exito {
+  background-color: #d4dbed;
+  color: #2e30aa; 
+  border: 1px solid #d4dbed; 
+  border-radius: 5px; 
+  padding: 10px; 
+  margin-top: 10px; 
+  margin-left: auto; 
+  margin-right: auto; 
+}
